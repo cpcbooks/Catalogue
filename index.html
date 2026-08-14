@@ -1,28 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cambridge Digital Catalogue 2027-28</title>
+<title>Cambridge Digital Catalogue 2026–27</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fa;
+    color: #1d2433;
+}
+
+/* HEADER */
+
+header {
+    background: #ffffff;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #17365d;
+}
+
+.logo span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #777;
+    letter-spacing: 1px;
+    margin-top: 3px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+/* HERO */
+
+.hero {
+    background: #17365d;
+    color: white;
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.hero-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    opacity: .8;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: .85;
+    margin-bottom: 30px;
+}
+
+/* SEARCH */
+
+.search-box {
+    max-width: 650px;
+    margin: auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 17px 22px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+/* GENERAL */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.section-description {
+    text-align: center;
+    color: #777;
+    margin-bottom: 35px;
+}
+
+/* CLASS BUTTONS */
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+}
+
+.class-card {
+    background: white;
+    padding: 20px 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    transition: .2s;
+    font-weight: 600;
+}
+
+.class-card:hover {
+    transform: translateY(-3px);
+    border-color: #17365d;
+    color: #17365d;
+}
+
+/* SERIES */
+
+.series-section {
+    background: white;
+}
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.series-card {
+    background: #f7f8fa;
+    border-radius: 12px;
+    padding: 30px;
+    min-height: 160px;
+    border: 1px solid #ececec;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.series-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.07);
+}
+
+.series-card h3 {
+    color: #17365d;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.series-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    background: #eef2f7;
+    padding: 60px 20px;
+}
+
+.cta h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.cta button {
+    background: #17365d;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111827;
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer p {
+    font-size: 13px;
+    opacity: .7;
+    margin-top: 8px;
+}
+
+/* MOBILE */
+
+@media(max-width: 850px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .class-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .series-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .class-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <h1>Cambridge Publishing Company Pvt Ltd.</h1>
+<header>
 
-    <h2>Digital Catalogue 2026–27</h2>
+<div class="logo">
+    CAMBRIDGE
+    <span>PUBLISHING COMPANY PVT. LTD.</span>
+</div>
 
-    <p>Supporting Every Learning Journey.</p>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Catalogue</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
 
-    <hr>
+</header>
 
-    <h3>Welcome to Cambridge Publishing Company</h3>
 
-    <p>
-        Explore our educational publications for students,
-        teachers, schools and bookshops.
-    </p>
+<section class="hero">
+
+<div class="hero-label">
+    Digital Catalogue • 2026–27
+</div>
+
+<h1>Find the right book.</h1>
+
+<p>
+Explore educational publications for students, teachers,
+schools and bookshops.
+</p>
+
+<div class="search-box">
+    <input
+        type="text"
+        placeholder="Search by title, class, subject or ISBN..."
+    >
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2 class="section-title">Browse by Class</h2>
+
+<p class="section-description">
+Quickly find publications suitable for your students.
+</p>
+
+
+<div class="class-grid">
+
+<div class="class-card">Nursery</div>
+<div class="class-card">LKG</div>
+<div class="class-card">UKG</div>
+
+<div class="class-card">1</div>
+<div class="class-card">2</div>
+<div class="class-card">3</div>
+<div class="class-card">4</div>
+<div class="class-card">5</div>
+<div class="class-card">6</div>
+<div class="class-card">7</div>
+<div class="class-card">8</div>
+<div class="class-card">9</div>
+<div class="class-card">10</div>
+
+<div class="class-card">1st PUC</div>
+<div class="class-card">2nd PUC</div>
+
+<div class="class-card">Degree</div>
+
+</div>
+
+</section>
+
+
+<section class="series-section">
+
+<div class="container">
+
+<h2 class="section-title">Explore Our Publications</h2>
+
+<p class="section-description">
+Discover our educational series and exam preparation resources.
+</p>
+
+
+<div class="series-grid">
+
+<div class="series-card">
+
+<h3>Honest Success</h3>
+
+<p>
+Comprehensive guides designed to support learning,
+revision and examination preparation.
+</p>
+
+</div>
+
+
+<div class="series-card">
+
+<h3>Lesson Based Assessment</h3>
+
+<p>
+LBA publications for Karnataka State Board students
+across major subjects.
+</p>
+
+</div>
+
+
+<div class="series-card">
+
+<h3>Little Master's</h3>
+
+<p>
+Engaging early-learning books, writing books,
+activity books and workbooks.
+</p>
+
+</div>
+
+
+<div class="series-card">
+
+<h3>Marks Scorer</h3>
+
+<p>
+Model question papers designed for effective
+examination practice.
+</p>
+
+</div>
+
+
+<div class="series-card">
+
+<h3>Previous Examination Papers</h3>
+
+<p>
+Previous examination question papers organised
+for convenient preparation and practice.
+</p>
+
+</div>
+
+
+<div class="series-card">
+
+<h3>Workbooks</h3>
+
+<p>
+Practice-oriented workbooks developed to reinforce
+classroom learning.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Looking for a particular book?</h2>
+
+<p>
+Browse our complete catalogue or contact our team for assistance.
+</p>
+
+<button>Browse All Publications</button>
+
+</section>
+
+
+<footer>
+
+<strong>Cambridge Publishing Company Pvt. Ltd.</strong>
+
+<p>Bengaluru, Karnataka</p>
+
+<p>© 2026 Cambridge Publishing Company Pvt. Ltd. All Rights Reserved.</p>
+
+</footer>
 
 </body>
 </html>
